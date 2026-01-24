@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Sreenivas | Shri Lakshmi Ayurvedha Nilayam | Since 1979</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f3923',      /* Deep Forest Green */
+                            primary: '#2e7d32',   /* Healing Green */
+                            gold: '#b8860b',      /* Gold Text */
+                            bg: '#fdfdfb',        /* Cream Background */
+                            light: '#e8f5e9'      /* Light Green Background */
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #fdfdfb; color: #1f2937; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+        
+        /* Lightbox */
+        #lightbox { transition: opacity 0.3s ease; }
+        #lightbox.hidden { opacity: 0; pointer-events: none; }
+        #lightbox:not(.hidden) { opacity: 1; pointer-events: auto; }
+        
+        /* Gallery Styles */
+        .tab-btn.active { background-color: #0f3923; color: white; border-color: #0f3923; }
+        .gallery-item { transition: all 0.4s ease; }
+        
+        /* Utility class to hide items for filtering/load more */
+        .gallery-item.hidden-item { display: none; }
+        
+        .gallery-item:hover img { transform: scale(1.05); }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="fixed w-full z-50 glass-nav shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-3" data-aos="fade-right">
+                    <div class="w-10 h-10 bg-brand-dark rounded-full flex items-center justify-center text-white shadow-md">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-bold text-lg md:text-xl text-brand-dark leading-none">Dr. Sreenivas</h1>
+                        <p class="text-[10px] md:text-xs text-brand-gold font-bold tracking-widest uppercase">Shri Lakshmi Ayurvedha</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex space-x-8 items-center font-medium text-sm">
+                    <a href="#home" class="hover:text-brand-primary transition">Home</a>
+                    <a href="#profile" class="hover:text-brand-primary transition">Profile</a>
+                    <a href="#specialties" class="hover:text-brand-primary transition font-bold text-brand-gold">Treatments</a>
+                    <a href="#gallery-section" class="hover:text-brand-primary transition">Gallery</a>
+                    <a href="#video-section" class="text-red-600 hover:text-red-700 font-bold flex items-center gap-1">
+                        <i class="fa-brands fa-youtube"></i> Videos
+                    </a>
+                    <a href="#contact" class="px-6 py-2.5 bg-brand-dark text-white rounded-full hover:bg-black transition shadow-lg transform hover:-translate-y-0.5">
+                        Book Appointment
+                    </a>
+                </div>
+
+                <button onclick="toggleMenu()" class="md:hidden text-brand-dark text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t absolute w-full shadow-xl">
+            <div class="flex flex-col p-4 space-y-4 font-medium">
+                <a href="#home" onclick="toggleMenu()" class="border-b py-2">Home</a>
+                <a href="#profile" onclick="toggleMenu()" class="border-b py-2">Profile</a>
+                <a href="#gallery-section" onclick="toggleMenu()" class="border-b py-2">Photo Gallery</a>
+                <a href="#video-section" onclick="toggleMenu()" class="border-b py-2 text-red-600">Videos</a>
+                <a href="#contact" onclick="toggleMenu()" class="font-bold py-2 bg-brand-light p-2 rounded text-center">Book Appointment</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="relative pt-32 pb-16 md:pt-44 md:pb-24 overflow-hidden bg-gradient-to-b from-white to-green-50">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-brand-light/50 skew-x-12 transform translate-x-20 z-0"></div>
+
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div data-aos="fade-up">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-brand-dark text-white rounded-full mb-6 shadow-md">
+                    <i class="fa-solid fa-star text-brand-gold"></i>
+                    <span class="text-xs font-bold tracking-wider uppercase">Est. 1979 • 45 Years of Tradition</span>
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.15] mb-4">
+                    Shri Lakshmi <br>
+                    <span class="text-brand-primary">Ayurvedha Nilayam</span>
+                </h1>
+                
+                <h2 class="text-xl md:text-2xl font-serif text-brand-gold font-semibold mb-6 italic">
+                    "A Center for Pain Management"
+                </h2>
+
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-lg">
+                    <strong>Integrative Medicine & Therapeutic Healing.</strong> <br>
+                    Combining ancient Ayurvedic wisdom with modern Naturopathy to treat chronic pain and lifestyle disorders.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="px-8 py-4 bg-brand-dark text-white text-center rounded-lg font-bold hover:bg-black transition shadow-xl flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-calendar-check"></i> Book Visit (₹500) 
+                    </a>
+                    <a href="#gallery-section" class="px-8 py-4 border-2 border-brand-dark text-brand-dark text-center rounded-lg font-bold hover:bg-brand-light transition">
+                        View Success Stories
+                    </a>
+                </div>
+            </div>
+            
+            <div class="relative" data-aos="zoom-in" data-aos-delay="200">
+                <div class="absolute inset-0 bg-brand-gold/10 rounded-tr-[80px] rounded-bl-[80px] transform rotate-3 scale-95"></div>
+                <img src="IMAGES/Profile_image.jpeg" 
+                     onerror="this.src='https://placehold.co/600x800?text=Dr+Sreenivas'"
+                     alt="Dr. Sreenivas" 
+                     class="relative w-full h-[500px] object-cover rounded-tr-[80px] rounded-bl-[80px] shadow-2xl block bg-gray-200 object-top">
+                
+                <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl border-l-4 border-brand-gold animate-bounce" style="animation-duration: 3s;">
+                    <p class="font-serif text-4xl font-bold text-brand-dark">Since</p>
+                    <p class="text-2xl font-bold text-brand-gold">1979</p>
+                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1">Authentic Care</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="profile" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="bg-white border border-gray-100 rounded-2xl p-8 shadow-xl relative overflow-hidden" data-aos="fade-up">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-dark to-brand-primary"></div>
+                
+                <div class="flex flex-col md:flex-row gap-8 items-start">
+                    <div class="w-20 h-20 bg-brand-dark text-white rounded-full flex items-center justify-center text-3xl shrink-0 shadow-lg border-4 border-brand-light">
+                        <i class="fa-solid fa-user-doctor"></i>
+                    </div>
+                    
+                    <div class="flex-1 space-y-3">
+                        <div>
+                            <h3 class="text-3xl font-serif font-bold text-brand-dark">Dr. Sreenivas</h3>
+                            <p class="text-brand-gold font-bold text-lg tracking-wide">Ayurveda & Naturopathy Specialist</p>
+                        </div>
+                        
+                        <div class="space-y-3 pt-2">
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-hospital text-brand-dark mt-1"></i>
+                                <span class="text-gray-700"><strong>Director:</strong> Shri Lakshmi Ayurvedha Nilayam</span>
+                            </div>
+                            
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-graduation-cap text-brand-dark mt-1"></i>
+                                <span class="text-gray-700"><strong>HOD:</strong> Dept. of Integrative Medicine</span>
+                            </div>
+                            
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-certificate text-brand-dark mt-1"></i>
+                                <span class="text-gray-700"><strong>BNYS:</strong> NATUROPATHY Traditional Medicine & Pain Mangement Specialist (Thailand)</span>
+                            </div>
+                            
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-location-dot text-brand-dark mt-1"></i>
+                                <span class="text-gray-700">Peddapalli, Telangana, India</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="specialties" class="py-20 bg-brand-dark text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5" style="background-image: url('https://www.transparenttextures.com/patterns/leaf.png');"></div>
+
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-brand-gold font-bold tracking-widest uppercase text-sm">Our Expertise</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2">Specialized Treatments</h2>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/10 hover:bg-white/20 transition cursor-default group">
+                    <div class="text-brand-gold text-xl mb-2"><i class="fa-solid fa-bone"></i></div><h3 class="font-bold text-lg">Paralysis</h3>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/10 hover:bg-white/20 transition cursor-default group">
+                    <div class="text-brand-gold text-xl mb-2"><i class="fa-solid fa-person-walking-with-cane"></i></div><h3 class="font-bold text-lg">Knee Pains</h3>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/10 hover:bg-white/20 transition cursor-default group">
+                    <div class="text-brand-gold text-xl mb-2"><i class="fa-solid fa-x-ray"></i></div><h3 class="font-bold text-lg">Back Pain</h3>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/10 hover:bg-white/20 transition cursor-default group">
+                    <div class="text-brand-gold text-xl mb-2"><i class="fa-solid fa-user-injured"></i></div><h3 class="font-bold text-lg">Cervical Spondylosis</h3>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/10 hover:bg-white/20 transition cursor-default group">
+                    <div class="text-brand-gold text-xl mb-2"><i class="fa-solid fa-bolt"></i></div><h3 class="font-bold text-lg">Sciatica</h3>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/10 hover:bg-white/20 transition cursor-default group">
+                    <div class="text-brand-gold text-xl mb-2"><i class="fa-solid fa-arrows-up-down"></i></div><h3 class="font-bold text-lg">Spine Problems</h3>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/10 hover:bg-white/20 transition cursor-default group">
+                    <div class="text-brand-gold text-xl mb-2"><i class="fa-solid fa-hand-dots"></i></div><h3 class="font-bold text-lg">Rheumatoid Arthritis</h3>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/10 hover:bg-white/20 transition cursor-default group">
+                    <div class="text-brand-gold text-xl mb-2"><i class="fa-solid fa-lungs"></i></div><h3 class="font-bold text-lg">Asthma & Sinusitis</h3>
+                </div>
+                 <div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/10 hover:bg-white/20 transition cursor-default group">
+                    <div class="text-brand-gold text-xl mb-2"><i class="fa-solid fa-droplet"></i></div><h3 class="font-bold text-lg">Diabetes Care</h3>
+                </div>
+                 <div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/10 hover:bg-white/20 transition cursor-default group">
+                    <div class="text-brand-gold text-xl mb-2"><i class="fa-solid fa-weight-scale"></i></div><h3 class="font-bold text-lg">Thyroid Issues</h3>
+                </div>
+                 <div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/10 hover:bg-white/20 transition cursor-default group">
+                    <div class="text-brand-gold text-xl mb-2"><i class="fa-solid fa-gem"></i></div><h3 class="font-bold text-lg">Kidney Stones</h3>
+                </div>
+                 <div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/10 hover:bg-white/20 transition cursor-default group">
+                    <div class="text-brand-gold text-xl mb-2"><i class="fa-solid fa-leaf"></i></div><h3 class="font-bold text-lg">Skin (Psoriasis)</h3>
+                </div>
+                 <div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/10 hover:bg-white/20 transition cursor-default group">
+                    <div class="text-brand-gold text-xl mb-2"><i class="fa-solid fa-brain"></i></div><h3 class="font-bold text-lg">Mind & Emotional</h3>
+                </div>
+                 <div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/10 hover:bg-white/20 transition cursor-default group">
+                    <div class="text-brand-gold text-xl mb-2"><i class="fa-solid fa-circle-stop"></i></div><h3 class="font-bold text-lg">Piles</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery-section" class="py-20 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-10" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900">Clinic Gallery</h2>
+                <p class="text-gray-600 mt-2">Explore our treatments, patient success stories, and clinic facilities.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-10" data-aos="fade-up">
+                <button onclick="filterGallery('all')" class="tab-btn active px-6 py-2 border border-brand-dark rounded-full font-bold transition hover:bg-brand-dark hover:text-white">All Photos</button>
+                <button onclick="filterGallery('treatment')" class="tab-btn px-6 py-2 border border-brand-dark rounded-full font-bold transition hover:bg-brand-dark hover:text-white">Treatments</button>
+                <button onclick="filterGallery('certificate')" class="tab-btn px-6 py-2 border border-brand-dark rounded-full font-bold transition hover:bg-brand-dark hover:text-white">Certificates</button>
+                <button onclick="filterGallery('event')" class="tab-btn px-6 py-2 border border-brand-dark rounded-full font-bold transition hover:bg-brand-dark hover:text-white">Events</button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+                
+               
+                <div class="gallery-item treatment group relative rounded-xl overflow-hidden shadow-lg h-64 cursor-pointer" onclick="openLightbox(this)">
+                    <img src="IMAGES/T3.jpeg" class="w-full h-full object-cover" alt="Treatment">
+                    <div class="absolute inset-0 bg-brand-dark/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-bold"><i class="fa-solid fa-expand mr-2"></i> View</div>
+                </div>
+                <div class="gallery-item treatment group relative rounded-xl overflow-hidden shadow-lg h-64 cursor-pointer" onclick="openLightbox(this)">
+                    <img src="IMAGES/T4.jpeg" class="w-full h-full object-cover" alt="Treatment">
+                    <div class="absolute inset-0 bg-brand-dark/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-bold"><i class="fa-solid fa-expand mr-2"></i> View</div>
+                </div>
+
+                <div class="gallery-item certificate group relative rounded-xl overflow-hidden shadow-lg h-64 cursor-pointer" onclick="openLightbox(this)">
+                    <img src="IMAGES/C1.jpeg" class="w-full h-full object-cover" alt="Certificate">
+                    <div class="absolute inset-0 bg-brand-dark/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-bold"><i class="fa-solid fa-expand mr-2"></i> View</div>
+                </div>
+                <div class="gallery-item certificate group relative rounded-xl overflow-hidden shadow-lg h-64 cursor-pointer" onclick="openLightbox(this)">
+                    <img src="IMAGES/C2.jpeg" class="w-full h-full object-cover" alt="Certificate">
+                    <div class="absolute inset-0 bg-brand-dark/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-bold"><i class="fa-solid fa-expand mr-2"></i> View</div>
+                </div>
+
+                <div class="gallery-item event group relative rounded-xl overflow-hidden shadow-lg h-64 cursor-pointer" onclick="openLightbox(this)">
+                    <img src="IMAGES/A1.jpeg" class="w-full h-full object-cover" alt="Event">
+                    <div class="absolute inset-0 bg-brand-dark/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-bold"><i class="fa-solid fa-expand mr-2"></i> View</div>
+                </div>
+                <div class="gallery-item event group relative rounded-xl overflow-hidden shadow-lg h-64 cursor-pointer" onclick="openLightbox(this)">
+                    <img src="IMAGES/A2.jpeg" class="w-full h-full object-cover" alt="Event">
+                    <div class="absolute inset-0 bg-brand-dark/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-bold"><i class="fa-solid fa-expand mr-2"></i> View</div>
+                </div>
+                <div class="gallery-item event group relative rounded-xl overflow-hidden shadow-lg h-64 cursor-pointer" onclick="openLightbox(this)">
+                    <img src="IMAGES/A3.jpeg" class="w-full h-full object-cover" alt="Event">
+                    <div class="absolute inset-0 bg-brand-dark/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-bold"><i class="fa-solid fa-expand mr-2"></i> View</div>
+                </div>
+                <div class="gallery-item event group relative rounded-xl overflow-hidden shadow-lg h-64 cursor-pointer" onclick="openLightbox(this)">
+                    <img src="IMAGES/D1.jpeg" class="w-full h-full object-cover" alt="Event">
+                    <div class="absolute inset-0 bg-brand-dark/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-bold"><i class="fa-solid fa-expand mr-2"></i> View</div>
+                </div>
+                <div class="gallery-item event group relative rounded-xl overflow-hidden shadow-lg h-64 cursor-pointer" onclick="openLightbox(this)">
+                    <img src="IMAGES/D2.jpeg" class="w-full h-full object-cover" alt="Event">
+                    <div class="absolute inset-0 bg-brand-dark/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-bold"><i class="fa-solid fa-expand mr-2"></i> View</div>
+                </div>
+                <div class="gallery-item event group relative rounded-xl overflow-hidden shadow-lg h-64 cursor-pointer" onclick="openLightbox(this)">
+                    <img src="IMAGES/D3.jpeg" class="w-full h-full object-cover" alt="Event">
+                    <div class="absolute inset-0 bg-brand-dark/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-bold"><i class="fa-solid fa-expand mr-2"></i> View</div>
+                </div>
+                <div class="gallery-item event group relative rounded-xl overflow-hidden shadow-lg h-64 cursor-pointer" onclick="openLightbox(this)">
+                    <img src="IMAGES/D4.jpeg" class="w-full h-full object-cover" alt="Event">
+                    <div class="absolute inset-0 bg-brand-dark/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-bold"><i class="fa-solid fa-expand mr-2"></i> View</div>
+                </div>
+                <div class="gallery-item event group relative rounded-xl overflow-hidden shadow-lg h-64 cursor-pointer" onclick="openLightbox(this)">
+                    <img src="IMAGES/D5.jpeg" class="w-full h-full object-cover" alt="Event">
+                    <div class="absolute inset-0 bg-brand-dark/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-bold"><i class="fa-solid fa-expand mr-2"></i> View</div>
+                </div>
+                <div class="gallery-item event group relative rounded-xl overflow-hidden shadow-lg h-64 cursor-pointer" onclick="openLightbox(this)">
+                    <img src="IMAGES/D6.jpeg" class="w-full h-full object-cover" alt="Event">
+                    <div class="absolute inset-0 bg-brand-dark/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-bold"><i class="fa-solid fa-expand mr-2"></i> View</div>
+                </div>
+                <div class="gallery-item event group relative rounded-xl overflow-hidden shadow-lg h-64 cursor-pointer" onclick="openLightbox(this)">
+                    <img src="IMAGES/D7.jpeg" class="w-full h-full object-cover" alt="Event">
+                    <div class="absolute inset-0 bg-brand-dark/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-bold"><i class="fa-solid fa-expand mr-2"></i> View</div>
+                </div>
+                <div class="gallery-item event group relative rounded-xl overflow-hidden shadow-lg h-64 cursor-pointer" onclick="openLightbox(this)">
+                    <img src="IMAGES/D8.jpeg" class="w-full h-full object-cover" alt="Event">
+                    <div class="absolute inset-0 bg-brand-dark/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-bold"><i class="fa-solid fa-expand mr-2"></i> View</div>
+                </div>
+                <div class="gallery-item event group relative rounded-xl overflow-hidden shadow-lg h-64 cursor-pointer" onclick="openLightbox(this)">
+                    <img src="IMAGES/D9.jpeg" class="w-full h-full object-cover" alt="Event">
+                    <div class="absolute inset-0 bg-brand-dark/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-bold"><i class="fa-solid fa-expand mr-2"></i> View</div>
+                </div>
+                <div class="gallery-item event group relative rounded-xl overflow-hidden shadow-lg h-64 cursor-pointer" onclick="openLightbox(this)">
+                    <img src="IMAGES/D10.jpeg" class="w-full h-full object-cover" alt="Event">
+                    <div class="absolute inset-0 bg-brand-dark/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-bold"><i class="fa-solid fa-expand mr-2"></i> View</div>
+                </div>
+                <div class="gallery-item event group relative rounded-xl overflow-hidden shadow-lg h-64 cursor-pointer" onclick="openLightbox(this)">
+                    <img src="IMAGES/D11.jpeg" class="w-full h-full object-cover" alt="Event">
+                    <div class="absolute inset-0 bg-brand-dark/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-bold"><i class="fa-solid fa-expand mr-2"></i> View</div>
+                </div>
+                <div class="gallery-item event group relative rounded-xl overflow-hidden shadow-lg h-64 cursor-pointer" onclick="openLightbox(this)">
+                    <img src="IMAGES/D12.jpeg" class="w-full h-full object-cover" alt="Event">
+                    <div class="absolute inset-0 bg-brand-dark/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-bold"><i class="fa-solid fa-expand mr-2"></i> View</div>
+                </div>
+                <div class="gallery-item event group relative rounded-xl overflow-hidden shadow-lg h-64 cursor-pointer" onclick="openLightbox(this)">
+                    <img src="IMAGES/D13.jpeg" class="w-full h-full object-cover" alt="Event">
+                    <div class="absolute inset-0 bg-brand-dark/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-bold"><i class="fa-solid fa-expand mr-2"></i> View</div>
+                </div>
+                <div class="gallery-item event group relative rounded-xl overflow-hidden shadow-lg h-64 cursor-pointer" onclick="openLightbox(this)">
+                    <img src="IMAGES/D14.jpeg" class="w-full h-full object-cover" alt="Event">
+                    <div class="absolute inset-0 bg-brand-dark/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-bold"><i class="fa-solid fa-expand mr-2"></i> View</div>
+                </div>
+                <div class="gallery-item event group relative rounded-xl overflow-hidden shadow-lg h-64 cursor-pointer" onclick="openLightbox(this)">
+                    <img src="IMAGES/D15.jpeg" class="w-full h-full object-cover" alt="Event">
+                    <div class="absolute inset-0 bg-brand-dark/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-bold"><i class="fa-solid fa-expand mr-2"></i> View</div>
+                </div>
+                <div class="gallery-item event group relative rounded-xl overflow-hidden shadow-lg h-64 cursor-pointer" onclick="openLightbox(this)">
+                    <img src="IMAGES/D16.jpeg" class="w-full h-full object-cover" alt="Event">
+                    <div class="absolute inset-0 bg-brand-dark/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-bold"><i class="fa-solid fa-expand mr-2"></i> View</div>
+                </div>
+                 <div class="gallery-item treatment group relative rounded-xl overflow-hidden shadow-lg h-64 cursor-pointer" onclick="openLightbox(this)">
+                    <img src="IMAGES/T1.jpeg" class="w-full h-full object-cover" alt="Treatment">
+                    <div class="absolute inset-0 bg-brand-dark/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-bold"><i class="fa-solid fa-expand mr-2"></i> View</div>
+                </div>
+                <div class="gallery-item treatment group relative rounded-xl overflow-hidden shadow-lg h-64 cursor-pointer" onclick="openLightbox(this)">
+                    <img src="IMAGES/T2.jpeg" class="w-full h-full object-cover" alt="Treatment">
+                    <div class="absolute inset-0 bg-brand-dark/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-bold"><i class="fa-solid fa-expand mr-2"></i> View</div>
+                </div>
+                <div class="gallery-item event group relative rounded-xl overflow-hidden shadow-lg h-64 cursor-pointer" onclick="openLightbox(this)">
+                    <img src="IMAGES/D17.jpeg" class="w-full h-full object-cover" alt="Event">
+                    <div class="absolute inset-0 bg-brand-dark/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-bold"><i class="fa-solid fa-expand mr-2"></i> View</div>
+                </div>
+                <div class="gallery-item event group relative rounded-xl overflow-hidden shadow-lg h-64 cursor-pointer" onclick="openLightbox(this)">
+                    <img src="IMAGES/D18.jpeg" class="w-full h-full object-cover" alt="Event">
+                    <div class="absolute inset-0 bg-brand-dark/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-bold"><i class="fa-solid fa-expand mr-2"></i> View</div>
+                </div>
+                <div class="gallery-item event group relative rounded-xl overflow-hidden shadow-lg h-64 cursor-pointer" onclick="openLightbox(this)">
+                    <img src="IMAGES/D19.jpeg" class="w-full h-full object-cover" alt="Event">
+                    <div class="absolute inset-0 bg-brand-dark/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-bold"><i class="fa-solid fa-expand mr-2"></i> View</div>
+                </div>
+                <div class="gallery-item event group relative rounded-xl overflow-hidden shadow-lg h-64 cursor-pointer" onclick="openLightbox(this)">
+                    <img src="IMAGES/D20.jpeg" class="w-full h-full object-cover" alt="Event">
+                    <div class="absolute inset-0 bg-brand-dark/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white font-bold"><i class="fa-solid fa-expand mr-2"></i> View</div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <button id="loadMoreBtn" onclick="loadMore()" class="hidden px-8 py-3 bg-brand-dark text-white rounded-full font-bold hover:bg-black transition shadow-lg">
+                    View All Photos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="video-section" class="py-20 bg-white border-t">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900">Health Talks & Advice</h2>
+                    <p class="text-gray-500 mt-1">Watch Dr. Sreenivas discuss pain management techniques.</p>
+                </div>
+                <a href="https://www.youtube.com/@Dr.sreenivas" target="_blank" class="px-6 py-2 bg-red-600 text-white rounded-full font-bold hover:bg-red-700 transition flex items-center gap-2">
+                    <i class="fa-brands fa-youtube"></i> Visit Channel
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="relative rounded-xl overflow-hidden shadow-lg aspect-video bg-black group hover:-translate-y-1 transition duration-300">
+                    <div onclick="playVideo(this)" class="cursor-pointer w-full h-full absolute inset-0 z-10 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/p/AF1QipOdb-buGBAH4O4KzQIUYT8NmLdsMGT9LiRq1w3c=s1360-w1360-h1020-rw');">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition">
+                            <i class="fa-brands fa-youtube text-6xl text-red-600 bg-white rounded-full p-1 shadow-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative rounded-xl overflow-hidden shadow-lg aspect-video bg-black group hover:-translate-y-1 transition duration-300">
+                    <div onclick="playVideo(this)" class="cursor-pointer w-full h-full absolute inset-0 z-10 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/p/AF1QipO29-RK0Dpkq42I5UEbSVw6QxG31lLHfptNQg8j=s1360-w1360-h1020-rw');">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition">
+                            <i class="fa-brands fa-youtube text-6xl text-red-600 bg-white rounded-full p-1 shadow-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative rounded-xl overflow-hidden shadow-lg aspect-video bg-black group hover:-translate-y-1 transition duration-300">
+                    <div onclick="playVideo(this)" class="cursor-pointer w-full h-full absolute inset-0 z-10 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/p/AF1QipMk1gErpBVngds_s0yytVnRtMJBNX1qPaJyMHEC=s1360-w1360-h1020-rw');">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition">
+                            <i class="fa-brands fa-youtube text-6xl text-red-600 bg-white rounded-full p-1 shadow-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center text-gray-500 mt-4 text-sm">Tap on the thumbnail to play the video.</p>
+        </div>
+    </section>
+
+    <section class="py-16 bg-brand-primary text-white text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-serif font-bold mb-8">Connect With Us</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <a href="https://www.google.com/maps/search/?api=1&query=Shri+Lakshmi+Ayurvedha+Nilayam+Peddapalli" target="_blank" class="bg-white/10 p-8 rounded-2xl hover:bg-white/20 transition group border border-white/20">
+                    <i class="fa-solid fa-map-location-dot text-4xl text-brand-gold mb-4 group-hover:scale-110 transition duration-300"></i>
+                    <h3 class="font-bold text-xl">Visit Clinic</h3>
+                    <div class="mt-4 inline-block px-4 py-2 bg-brand-gold text-brand-dark font-bold rounded-full text-sm">
+                        Get Directions <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </div>
+                </a>
+                
+                <a href="https://in.linkedin.com/in/dr-sreenivas-18016427b" target="_blank" class="bg-white/10 p-8 rounded-2xl hover:bg-white/20 transition group border border-white/20">
+                    <i class="fa-brands fa-linkedin text-4xl text-brand-gold mb-4 group-hover:scale-110 transition duration-300"></i>
+                    <h3 class="font-bold text-xl">Professional Profile</h3>
+                    <div class="mt-4 inline-block px-4 py-2 bg-[#0077b5] text-white font-bold rounded-full text-sm">
+                        Connect on LinkedIn <i class="fa-solid fa-link ml-1"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-brand-bg">
+        <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-12">
+            <div>
+                <h2 class="text-3xl font-serif font-bold text-brand-dark mb-2">Get in Touch</h2>
+                <div class="w-20 h-1 bg-brand-gold mb-8"></div>
+                
+                <div class="space-y-8">
+                    <div class="flex gap-4 items-start">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-brand-dark shrink-0">
+                            <i class="fa-solid fa-location-dot text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-lg">Our Address</h4>
+                            <p class="text-gray-600 leading-relaxed">Shri Lakshmi Ayurvedha Nilayam,<br>Ground Floor, Mutyala Pochamma Temple Road,<br>Kaman Road, Peddapalli-505172, Telangana</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Shri+Lakshmi+Ayurvedha+Nilayam+Peddapalli" target="_blank" class="inline-block mt-2 text-sm font-bold text-brand-primary hover:text-brand-dark underline">
+                                <i class="fa-solid fa-map-pin"></i> Open in Maps
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-4 items-center">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-brand-dark shrink-0">
+                            <i class="fa-solid fa-phone text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-lg">Phone Number</h4>
+                            <a href="tel:+919908466929" class="text-gray-600 font-bold hover:text-brand-dark transition text-lg">+91 99084 66929</a>
+                        </div>
+                    </div>
+                    
+                     <div class="flex gap-4 items-center">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-brand-dark shrink-0">
+                            <i class="fa-solid fa-envelope text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-lg">Email Address</h4>
+                            <p class="text-gray-600">srilaxmiayurvedanilayam@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 md:p-10 rounded-3xl shadow-2xl border-t-8 border-brand-dark relative overflow-hidden">
+                <div class="absolute -top-10 -right-10 w-32 h-32 bg-brand-gold/20 rounded-full blur-3xl"></div>
+                
+                <h3 class="text-2xl font-bold mb-6 text-brand-dark">Book an Appointment</h3>
+                <form onsubmit="sendToWhatsApp(event)" class="space-y-4 relative z-10">
+                    <input type="text" id="name" placeholder="Full Name" required class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg">
+                    <input type="tel" id="phone" placeholder="Mobile Number" required class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg">
+                    <input type="date" id="date" required class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg">
+                    <textarea id="message" rows="3" placeholder="Problem Description" class="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg"></textarea>
+                    
+                    <button type="submit" class="w-full py-4 bg-brand-dark text-white font-bold rounded-lg hover:bg-black transition flex justify-center items-center gap-2 shadow-lg">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i> Request via WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-400 py-10 text-center border-t border-gray-800 text-sm">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col items-center mb-6">
+                <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-white mb-4">
+                     <i class="fa-solid fa-leaf"></i>
+                </div>
+                <h3 class="text-white font-serif text-xl">Shri Lakshmi Ayurvedha Nilayam</h3>
+            </div>
+            <p class="mb-4">© 2024 Dr. Sreenivas. All Rights Reserved.</p>
+            <p>Designed & Developed by <a href="mailto:sathwikn699@gmail.com" class="text-brand-gold font-bold hover:underline">Noomuri Sathwik</a></p>
+        </div>
+    </footer>
+
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 hidden flex items-center justify-center backdrop-blur-sm">
+        <button onclick="closeLightbox()" class="absolute top-5 right-5 text-white/50 hover:text-white text-4xl transition"><i class="fa-solid fa-times"></i></button>
+        
+        <button onclick="slideLightbox(-1)" class="absolute left-2 md:left-10 text-white/50 hover:text-white text-4xl p-4 hover:bg-white/10 rounded-full transition"><i class="fa-solid fa-chevron-left"></i></button>
+        
+        <img id="lightbox-img" src="" class="max-h-[85vh] max-w-[90vw] object-contain rounded-lg shadow-2xl border-2 border-white/20">
+        
+        <button onclick="slideLightbox(1)" class="absolute right-2 md:right-10 text-white/50 hover:text-white text-4xl p-4 hover:bg-white/10 rounded-full transition"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        function toggleMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        function sendToWhatsApp(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const date = document.getElementById('date').value;
+            const msg = document.getElementById('message').value;
+            const text = `*New Appointment Request*%0AName: ${name}%0APhone: ${phone}%0ADate: ${date}%0AProblem: ${msg}`;
+            window.open(`https://wa.me/919908466929?text=${text}`, '_blank');
+        }
+
+        // --- Gallery Logic Configuration ---
+        const itemsPerPage = 9; 
+        let currentCategory = 'all';
+
+        // --- Filter Logic with Load More ---
+        function filterGallery(category) {
+            currentCategory = category;
+            const items = document.querySelectorAll('.gallery-item');
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+            const buttons = document.querySelectorAll('.tab-btn');
+
+            // 1. UI Active State
+            if(event) {
+                buttons.forEach(btn => btn.classList.remove('active'));
+                event.target.classList.add('active');
+            }
+
+            let visibleCount = 0;
+            let totalInCategory = 0;
+
+            items.forEach(item => {
+                const isMatch = category === 'all' || item.classList.contains(category);
+                
+                if (isMatch) {
+                    totalInCategory++;
+                    item.dataset.filtered = "true"; 
+                    
+                    if (visibleCount < itemsPerPage) {
+                        item.classList.remove('hidden-item');
+                        item.style.animation = 'fadeUp 0.5s ease forwards';
+                    } else {
+                        item.classList.add('hidden-item');
+                    }
+                    visibleCount++;
+                } else {
+                    item.dataset.filtered = "false";
+                    item.classList.add('hidden-item');
+                }
+            });
+
+            if (totalInCategory > itemsPerPage) {
+                loadMoreBtn.classList.remove('hidden');
+            } else {
+                loadMoreBtn.classList.add('hidden');
+            }
+        }
+
+        function loadMore() {
+            const hiddenItems = document.querySelectorAll(`.gallery-item[data-filtered="true"].hidden-item`);
+            hiddenItems.forEach(item => {
+                item.classList.remove('hidden-item');
+                item.style.animation = 'fadeUp 0.5s ease forwards';
+            });
+            document.getElementById('loadMoreBtn').classList.add('hidden');
+        }
+
+        function openLightbox(element) {
+            const clickedSrc = element.querySelector('img').src;
+            document.getElementById('lightbox-img').src = clickedSrc;
+            document.getElementById('lightbox').classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.add('hidden');
+        }
+
+        function slideLightbox(direction) {
+            const categorySelector = currentCategory === 'all' ? '.gallery-item' : `.gallery-item.${currentCategory}`;
+            const images = Array.from(document.querySelectorAll(`${categorySelector} img`));
+            
+            const currentSrc = document.getElementById('lightbox-img').src;
+            let idx = images.findIndex(img => img.src === currentSrc);
+            
+            if(idx === -1) idx = 0;
+
+            let newIdx = idx + direction;
+            if (newIdx >= images.length) newIdx = 0;
+            if (newIdx < 0) newIdx = images.length - 1;
+            
+            document.getElementById('lightbox-img').src = images[newIdx].src;
+        }
+
+        function playVideo(element) {
+            window.open('https://www.youtube.com/@Dr.sreenivas', '_blank');
+        }
+
+        // --- DOM Ready Initialization ---
+        document.addEventListener('DOMContentLoaded', () => {
+             // 1. Set Minimum Date to Today
+             const dateInput = document.getElementById('date');
+             if(dateInput) {
+                 const now = new Date();
+                 const year = now.getFullYear();
+                 const month = String(now.getMonth() + 1).padStart(2, '0');
+                 const day = String(now.getDate()).padStart(2, '0');
+                 dateInput.min = `${year}-${month}-${day}`;
+             }
+
+             // 2. Initialize Gallery Filter
+             const items = document.querySelectorAll('.gallery-item');
+             const loadMoreBtn = document.getElementById('loadMoreBtn');
+             let visibleCount = 0;
+             let totalInCategory = 0;
+             
+             items.forEach(item => {
+                totalInCategory++;
+                item.dataset.filtered = "true";
+                if (visibleCount < itemsPerPage) {
+                    item.classList.remove('hidden-item');
+                } else {
+                    item.classList.add('hidden-item');
+                }
+                visibleCount++;
+             });
+             
+             if (totalInCategory > itemsPerPage) {
+                loadMoreBtn.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
